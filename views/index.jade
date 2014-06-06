@@ -6,3 +6,16 @@ block content
   p Start creating your poll
 
   .poll
+    .questions
+    label Add type of question
+    br
+    select.selector
+      option(value="0") Select
+      option(value="1") Single answer
+      option(value="2") Multiple answers
+      option(value="3") Textual answer
+    br
+    br
+    button.btn.btn-success Done
+
+  script(src='js/index.js')
