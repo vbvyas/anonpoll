@@ -11,6 +11,24 @@ $(document).ready(function() {
     if (selection == 3) {
       addTextPoll();
     }
-    $('.questions').append("<div><input type='text' placeholder='Enter the question'/></div>");
   });
 });
+
+function questionPrompt() {
+  $('.questions').append("<div><input type='text' placeholder='Enter the question'/></div>");
+}
+
+// one answer only - radio buttons
+function addSingleAnswerPoll() {
+  questionPrompt();
+}
+
+// multiple answers - check boxes
+function addMultipleAnswerPoll() {
+  questionPrompt();
+}
+
+// text answer
+function addTextPoll() {
+  questionPrompt();
+}
