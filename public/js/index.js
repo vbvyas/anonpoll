@@ -15,20 +15,23 @@ $(document).ready(function() {
 });
 
 function questionPrompt() {
-  $('.questions').append("<div><input type='text' placeholder='Enter the question'/></div>");
+  $('.questions').append("<div><input type='text' placeholder='Enter the question'/></div><div class='answers'></div>");
 }
 
 function answerPrompt() {
+  $('.answers').append("<div><input type='text' placeholder='Enter response'/></div>");
 }
 
 // one answer only - radio buttons
 function addSingleAnswerPoll() {
   questionPrompt();
+  answerPrompt();
 }
 
 // multiple answers - check boxes
 function addMultipleAnswerPoll() {
   questionPrompt();
+  answerPrompt();
 }
 
 // text answer
