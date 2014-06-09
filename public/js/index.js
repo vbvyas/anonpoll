@@ -18,6 +18,9 @@ function questionPrompt() {
   $('.questions').append("<div><input type='text' placeholder='Enter the question'/></div>");
 }
 
+function answerPrompt() {
+}
+
 // one answer only - radio buttons
 function addSingleAnswerPoll() {
   questionPrompt();
