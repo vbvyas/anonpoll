@@ -12,10 +12,16 @@ $(document).ready(function() {
       addTextPoll();
     }
   });
+
+  $('.add-answer').click(function () {
+    var p = $(this).parent();
+    var a = $(p).children('.answers');
+    $(a).append("<div><input type='text' placeholder='Enter response'/></div>");
+  });
 });
 
 function questionPrompt() {
-  $('.questions').append("<div><input type='text' placeholder='Enter the question'/></div><div class='answers'></div>");
+  $('.questions').append("<div><input type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
 }
 
 function answerPrompt() {
