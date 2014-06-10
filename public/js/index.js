@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.add-answer').click(function () {
+  $('.questions').on('click', '.add-answer', function () {
     var p = $(this).parent();
     var a = $(p).children('.answers');
     $(a).append("<div><input type='text' placeholder='Enter response'/></div>");
