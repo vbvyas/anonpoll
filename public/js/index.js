@@ -13,7 +13,8 @@ $(document).ready(function() {
     }
   });
 
-  $('.questions').on('click', '.add-answer', function () {
+  $('.questions').on('click', '.add-answer', function (event) {
+    event.preventDefault();
     var p = $(this).parent();
     var a = $(p).children('.answers');
     $(a).append("<div><input type='text' placeholder='Enter response'/></div>");
@@ -21,11 +22,11 @@ $(document).ready(function() {
 });
 
 function questionPrompt() {
-  $('.questions').append("<div><input type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
+  $('.questions').append("<div><input name='question' type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
 }
 
 function answerPrompt() {
-  $('.answers').append("<div><input type='text' placeholder='Enter response'/></div>");
+  $('.answers').append("<div><input name='answer' type='text' placeholder='Enter response'/></div>");
 }
 
 // one answer only - radio buttons

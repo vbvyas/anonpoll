@@ -5,7 +5,7 @@ block content
 
   p Start creating your poll
 
-  .poll
+  form.poll(action='/data', method='POST')
     .questions
     label Add type of question
     br
@@ -16,6 +16,6 @@ block content
       option(value="3") Textual answer
     br
     br
-    button.btn.btn-success Done
+    input.btn.btn-success(type='submit', value='Done')
 
   script(src='js/index.js')
