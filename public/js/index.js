@@ -21,12 +21,16 @@ $(document).ready(function() {
   });
 });
 
+var count = 0;
+
 function questionPrompt() {
-  $('.questions').append("<div><input name='question' type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
+  $('.questions').append("<div><input name='question[" + this.count + "]' type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
+  this.count++;
 }
 
 function textQuestionPrompt() {
-  $('.questions').append("<div><input name='question' type='text' placeholder='Enter the question'/></div>");
+  $('.questions').append("<div><input name='question[" + this.count + "]' type='text' placeholder='Enter the question'/></div>");
+  this.count++;
 }
 
 function answerPrompt() {
