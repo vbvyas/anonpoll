@@ -23,9 +23,8 @@ $(document).ready(function() {
 
 var count = 0;
 
-function questionPrompt() {
-  $('.questions').append("<div><input name='question[" + this.count + "]' type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
-  this.count++;
+function questionPrompt(id) {
+  $('.questions').append("<div><input name='question[" + id + "][q]' type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
 }
 
 function textQuestionPrompt() {
@@ -33,20 +32,24 @@ function textQuestionPrompt() {
   this.count++;
 }
 
-function answerPrompt() {
-  $('.answers').append("<div><input name='answer' type='text' placeholder='Enter response'/></div>");
+function answerPrompt(id) {
+  $('.answers').append("<div><input name='question[" + id + "][a]' type='text' placeholder='Enter response'/></div>");
 }
 
 // one answer only - radio buttons
 function addSingleAnswerPoll() {
-  questionPrompt();
-  answerPrompt();
+  var id = this.count;
+  questionPrompt(id);
+  answerPrompt(id);
+  this.count++;
 }
 
 // multiple answers - check boxes
 function addMultipleAnswerPoll() {
-  questionPrompt();
-  answerPrompt();
+  var id = this.count;
+  questionPrompt(id);
+  answerPrompt(id);
+  this.count++;
 }
 
 // text answer
