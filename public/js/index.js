@@ -27,9 +27,8 @@ function questionPrompt(id) {
   $('.questions').append("<div><input name='question[" + id + "][q]' type='text' placeholder='Enter the question'/><div class='answers'></div><br><button class='add-answer btn btn-primary'>Add response</button></div>");
 }
 
-function textQuestionPrompt() {
-  $('.questions').append("<div><input name='question[" + this.count + "]' type='text' placeholder='Enter the question'/></div>");
-  this.count++;
+function textQuestionPrompt(id) {
+  $('.questions').append("<div><input name='question[" + id + "][q]' type='text' placeholder='Enter the question'/></div>");
 }
 
 function answerPrompt(id) {
@@ -54,5 +53,7 @@ function addMultipleAnswerPoll() {
 
 // text answer
 function addTextPoll() {
-  textQuestionPrompt();
+  var id = this.count;
+  textQuestionPrompt(id);
+  this.count++;
 }
