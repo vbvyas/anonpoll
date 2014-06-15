@@ -21,6 +21,7 @@ $(document).ready(function() {
   });
 });
 
+// question count
 var count = 0;
 
 function questionPrompt(id) {
